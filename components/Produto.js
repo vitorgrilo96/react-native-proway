@@ -3,10 +3,13 @@ import { Image, StyleSheet, Text, View } from "react-native";
 export function Produto(props) {
     return (
         <View>
-            <Text style={styles.nome}>Nokia tijolão</Text>
+            <Text style={styles.nome}>{props.nome}</Text>
             <Image style={styles.avatar} source={{ uri: props.avatarUrl }} />
-            <Text style={styles.preco}>100 R$</Text>
+            <Text style={styles.preco}>R$ {props.preco}</Text>
+            <Text style={styles.categoria}> {props.categoria}</Text>
+            <Text style={styles.estoque}>estoque: {props.estoque ? "tem" : "não tem"  }</Text>
         </View>
+
     )
 }
 const styles = StyleSheet.create({
